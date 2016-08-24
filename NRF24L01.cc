@@ -14,6 +14,13 @@ NRF24L01 *NRF24L01::CreateAndInitStatic(
         uint8_t             pin_ce)
 {
 
+    if ((send_byte == NULL) ||
+        (pport_cs == NULL) ||
+        (pddr_cs == NULL) ||
+        (pddr_ce == NULL) ||
+        (pport_ce == NULL)) {
+        return NULL;
+    }
 
     return &object;
 }

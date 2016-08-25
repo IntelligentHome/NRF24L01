@@ -1,10 +1,10 @@
 #include "NRF24L01.h"
 
-namespace NRF24L01 {
+namespace nrf24l01 {
 
-static NRF24L01 object;
+static Nrf24l01 object;
 
-NRF24L01 *NRF24L01::CreateAndInitStatic(
+Nrf24l01 *Nrf24l01::CreateAndInitStatic(
         send_byte_t         send_byte,
         volatile uint8_t    *pddr_cs,
         volatile uint8_t    *pport_cs,
@@ -25,4 +25,4 @@ NRF24L01 *NRF24L01::CreateAndInitStatic(
     return &object;
 }
 
-} // namespace NRF24L01
+} // namespace nrf24l01

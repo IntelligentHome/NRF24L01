@@ -11,7 +11,43 @@
 
 namespace NRF24L01 {
 
+enum Status
+{
+    STATUS_SUCCESS = 0,
+    STATUS_FAILURE,
+    STATUS_PTR_ERROR,
+    NUM_OF_STATUS,
+};
+
+union NrfStatusRegister
+{
+    struct
+    {
+        uint8_t tx_full         : 1,
+                rx_pipe_no      : 3,
+                max_rt          : 1,
+                tx_data_ready   : 1,
+                rx_data_ready   : 1,
+                reserved        : 1;
+    };
+
+    uint8_t raw_data;
+};
+
 typedef uint8_t (*send_byte_t) (uint8_t data);
+
+// Interface for all NRF24L01 implementations
+class INrf24l01
+{
+    public:
+        virtual NrfStatusRegister get_register_status(void) = 0;
+
+        virtual Status read(uint8_t payload_tab[], uint8_t payload_size) = 0;
+        virtual Status write(uint8_t payload_tab[], uint8_t payload_size) = 0;
+
+        virtual Status start_listening(void) = 0;
+        virtual Status stop_listening(void) = 0;
+};
 
 class NRF24L01 {
     public:

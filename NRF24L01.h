@@ -9,7 +9,7 @@
 #define NULL 0
 #endif
 
-namespace NRF24L01 {
+namespace nrf24l01 {
 
 enum Status
 {
@@ -49,9 +49,9 @@ class INrf24l01
         virtual Status stop_listening(void) = 0;
 };
 
-class NRF24L01 {
+class Nrf24l01 {
     public:
-        static NRF24L01 *CreateAndInitStatic(
+        static Nrf24l01 *CreateAndInitStatic(
                 send_byte_t         send_byte,
                 volatile uint8_t    *pddr_cs,
                 volatile uint8_t    *pport_cs,
@@ -60,7 +60,7 @@ class NRF24L01 {
                 volatile uint8_t    *pport_ce,
                 uint8_t             pin_ce);
 
-        void Destroy(NRF24L01 *handle);
+        void Destroy(Nrf24l01 *handle);
 
     private:
 
@@ -74,4 +74,4 @@ class NRF24L01 {
         uint8_t             pin_ce_;
 };
 
-} // namespace NRF24L01
+} // namespace nrf24l01

@@ -14,7 +14,7 @@ uint8_t send_data(uint8_t data) {
 
 TEST(NRF24L01_Create, successful_init)
 {
-    NRF24L01::NRF24L01 *handle = NRF24L01::NRF24L01::CreateAndInitStatic(
+    nrf24l01::Nrf24l01 *handle = nrf24l01::Nrf24l01::CreateAndInitStatic(
             send_data,
             &ddr_cs,
             &port_cs,
@@ -28,7 +28,7 @@ TEST(NRF24L01_Create, successful_init)
 
 TEST(NRF24L01_Create, pass_null_pointer_send_data)
 {
-    NRF24L01::NRF24L01 *handle = NRF24L01::NRF24L01::CreateAndInitStatic(
+    nrf24l01::Nrf24l01 *handle = nrf24l01::Nrf24l01::CreateAndInitStatic(
             NULL,
             &ddr_cs,
             &port_cs,
@@ -42,7 +42,7 @@ TEST(NRF24L01_Create, pass_null_pointer_send_data)
 
 TEST(NRF24L01_Create, pass_null_pointer_port_cs)
 {
-    NRF24L01::NRF24L01 *handle = NRF24L01::NRF24L01::CreateAndInitStatic(
+    nrf24l01::Nrf24l01 *handle = nrf24l01::Nrf24l01::CreateAndInitStatic(
             send_data,
             &ddr_cs,
             NULL,
@@ -56,7 +56,7 @@ TEST(NRF24L01_Create, pass_null_pointer_port_cs)
 
 TEST(NRF24L01_Create, pass_null_pointer_ddr_cs)
 {
-    NRF24L01::NRF24L01 *handle = NRF24L01::NRF24L01::CreateAndInitStatic(
+    nrf24l01::Nrf24l01 *handle = nrf24l01::Nrf24l01::CreateAndInitStatic(
             send_data,
             NULL,
             &port_cs,
@@ -70,7 +70,7 @@ TEST(NRF24L01_Create, pass_null_pointer_ddr_cs)
 
 TEST(NRF24L01_Create, pass_null_pointer_ddr_ce)
 {
-    NRF24L01::NRF24L01 *handle = NRF24L01::NRF24L01::CreateAndInitStatic(
+    nrf24l01::Nrf24l01 *handle = nrf24l01::Nrf24l01::CreateAndInitStatic(
             send_data,
             &ddr_cs,
             &port_cs,
@@ -85,7 +85,7 @@ TEST(NRF24L01_Create, pass_null_pointer_ddr_ce)
 // This is a test for null pointer port ce
 TEST(NRF24L01_Create, pass_null_pointer_port_ce)
 {
-    NRF24L01::NRF24L01 *handle = NRF24L01::NRF24L01::CreateAndInitStatic(
+    nrf24l01::Nrf24l01 *handle = nrf24l01::Nrf24l01::CreateAndInitStatic(
             send_data,
             &ddr_cs,
             &port_cs,

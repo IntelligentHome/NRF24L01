@@ -82,6 +82,7 @@ TEST(NRF24L01_Create, pass_null_pointer_ddr_ce)
     EXPECT_TRUE(NULL == handle);
 }
 
+// This is a test for null pointer port ce
 TEST(NRF24L01_Create, pass_null_pointer_port_ce)
 {
     NRF24L01::NRF24L01 *handle = NRF24L01::NRF24L01::CreateAndInitStatic(

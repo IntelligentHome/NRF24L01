@@ -5,6 +5,7 @@
 #include <stdint.h>
 
 #ifndef NULL
+// Define NULL if unknown.
 #define NULL 0
 #endif
 

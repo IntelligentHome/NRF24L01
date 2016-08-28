@@ -27,7 +27,9 @@ add_executable(
     unit_tests
     main.cc
     NRF24L01_Create.cc
+    NRF24L01_Avr_Build.cc
     ../NRF24L01.cc
+    ../Nrf24l01Avr.cc
     )
 
 add_dependencies(unit_tests googletest)

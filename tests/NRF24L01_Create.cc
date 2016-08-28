@@ -1,6 +1,8 @@
 #include "gtest/gtest.h"
 #include "NRF24L01.h"
 
+namespace NRF24L01_Create {
+
 uint8_t port_ce = 0xB0;
 uint8_t ddr_ce  = 0xB1;
 uint8_t pin_ce  = 2;
@@ -96,3 +98,5 @@ TEST(NRF24L01_Create, pass_null_pointer_port_ce)
 
     EXPECT_TRUE(NULL == handle);
 }
+
+} // namespace NRF24L01_Create

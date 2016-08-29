@@ -1,11 +1,11 @@
 
 #pragma once
 
-#include "Nrf24l01Base.h"
+#include "NRF24L01.h"
 
 namespace nrf24l01 {
 
-class Nrf24l01Avr : public Nrf24l01Base
+class Nrf24l01Base : public INrf24l01
 {
 public:
     virtual NrfStatusRegister get_register_status(void);
@@ -19,7 +19,7 @@ public:
 
     virtual INrf24l01 *init(void);
 
-    virtual ~Nrf24l01Avr() {}
+    virtual ~Nrf24l01Base() {}
 };
 
 } // namespace nrf24l01

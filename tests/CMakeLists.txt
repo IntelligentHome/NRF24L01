@@ -30,6 +30,7 @@ add_executable(
     NRF24L01_Avr_Build.cc
     ../NRF24L01.cc
     ../Nrf24l01Avr.cc
+    ../Nrf24l01Base.cc
     )
 
 add_dependencies(unit_tests googletest)
